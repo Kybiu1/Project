@@ -37,83 +37,101 @@ namespace German
 
             int a = 0;
             int x = 0;
-            Console.WriteLine("First Test!(You can make 9 mistakes.)\n");
-
+            int y = 0;
+            Console.WriteLine("First Test!(You can make 3 mistakes.)\n");
+            
             for (int i = 0; i < 10; i++)
             {
-                    Console.WriteLine("What does " + straList[x] + " translate to in german?");
+                Console.WriteLine("What does " + straList[x] + " translate to in german?");
 
-                    if (Console.ReadLine() == strList[x])
+                if (Console.ReadLine() == strList[x])
+                {
+                    Console.WriteLine("Congratulations, that was the right answer!\n");
+                    a++;
+                    x++;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong answer!\n");
+                    y++;
+                }
+
+                if (a == 10)
+                {
+                    Console.WriteLine("Congratulations, you passed the test!\n");
+
+                    Console.WriteLine("\nHere are all the answers again:\n");
+                    foreach (string value in strList)
                     {
-                        Console.WriteLine("Congratulations, that was the right answer!\n");
-                        a++;
-                        x++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Wrong answer!\n");
-                        
+                        Console.WriteLine(value);
                     }
 
-                    if (a == 10)
-                    {
-                        Console.WriteLine("Congratulations, you passed the test!");
+                    break;
+                }
+                if (x == 10 || y==3)
+                {
+                    Console.WriteLine("\nYou have " + a + " correct answer/s.\n");
+                }
+                if (i == 9 || y==3)
+                {
+                    Console.WriteLine("You failed and wasted all the tries.\n");
 
-                        Console.WriteLine("\nHere are all the answers again:");
-
-                        foreach (string value in strList)
-                        {
-                            Console.WriteLine(value);
-                        }
-                        break;
-                    }
-                    if (x == 10)
+                    Console.WriteLine("\nHere are all the answers again:");
+                    foreach (string value in strList)
                     {
-                        Console.WriteLine("\nYou have " + a + " correct answer/s.\n");
-                        a = 0;
+                        Console.WriteLine(value);
                     }
-                    if (i == 9)
-                    {
-                        Console.WriteLine("You failed and wasted all the tries.\n");
-
-                        Console.WriteLine("\nHere are all the answers again:");
-                        foreach (string value in strList)
-                        {
-                            Console.WriteLine(value);
-                        }
-                    }
+                    break;
+                }
             }
          
-                Console.WriteLine("Next Project!\n");
-                Console.WriteLine("Ich habe mir einen Ring fuer 45$ gekauft.\n");
-                Console.WriteLine("Schreibe die Nummer in Textform(Write the number in textform).\n");
-                string b = "fuenfundvierzig";
-                if (Console.ReadLine() == b)
-                {
-                    Console.WriteLine("Richtig! :)\n");
-                }
-                else
-                {
-                    Console.WriteLine("Falsch! :(\n");
-                }
-
-                Console.WriteLine("Next Question!\n");
-                Console.WriteLine("Es ist 5pm.\n");
-                Console.WriteLine("Wandel es in deutsche Zeit um /(Convert it to german time).");
-
-                string c = "17";
-                if (Console.ReadLine() == c)
-                {
-                    Console.WriteLine("Correct!\n");
-                    Console.WriteLine("Press enter to leave the test.\n");
-                    Console.ReadLine();
-                }
-                else
-                {
-                    Console.WriteLine("Wrong!\n");
-                    Console.WriteLine("Press enter to leave the test.\n");
-                    Console.ReadLine();
+            Console.WriteLine("Next Project!\n");
+            Console.WriteLine("Ich habe mir einen Ring fuer 45$ gekauft.\n");
+            Console.WriteLine("Schreibe die Nummer in Textform(Write the number in textform).\n");
+            string b = "fuenfundvierzig";
+            if (Console.ReadLine() == b)
+            {
+                Console.WriteLine("Richtig! :)\n");
             }
+            else
+            {
+                Console.WriteLine("Falsch! :(\n");
             }
+
+               
+
+            Console.WriteLine("Next Question!\n");
+
+            string s = "Wandel es nun in deutsche Zeit um.";
+
+            Console.WriteLine("Random sentence: "+s+"\n");
+
+            Console.WriteLine("Which word in this sentence means roughly translated german?");
+
+            if (Console.ReadLine() == s.Substring(17, 8))
+            {
+                Console.WriteLine("Correct.");
+            }
+            else
+            {
+                Console.WriteLine("Wrong.");
+            }
+
+            Console.WriteLine("Wandel es nun in deutsche Zeit um /(Convert it now to german time).");
+
+            string c = "17";
+            if (Console.ReadLine() == c)
+            {
+                Console.WriteLine("Correct!\n");
+                Console.WriteLine("Press enter to leave the test.\n");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Wrong!\n");
+                Console.WriteLine("Press enter to leave the test.\n");
+                Console.ReadLine();
+        }
         }
     }
+}
